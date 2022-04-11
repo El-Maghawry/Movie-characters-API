@@ -7,6 +7,9 @@ Click on the heroku link to access the api:
 
 https://movie-characters-api.herokuapp.com/swagger-ui/index.html
 
+
+![image](https://user-images.githubusercontent.com/96972844/162759036-96306e17-0d59-43db-a461-a72047c0c140.png)
+
 ---
 ## Instructions Usage
 

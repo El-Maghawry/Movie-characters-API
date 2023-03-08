@@ -17,17 +17,8 @@ public class DataSourceConfig {
 
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
-        URI databaseUri = new URI(databaseUrl);
-        String[] creds = databaseUri.getUserInfo().split(":");
-        String url = String.format("jdbc:postgresql://%s:%s%s?sslmode=require&user=%s&password=%s",
-                databaseUri.getHost(),
-                databaseUri.getPort(),
-                databaseUri.getPath(),
-                creds[0],
-                creds[1]);
-
         BasicDataSource source = new BasicDataSource();
-        source.setUrl(url);
+        source.setUrl(databaseUrl);
 
         return source;
     }

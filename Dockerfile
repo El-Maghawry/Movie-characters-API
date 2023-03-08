@@ -1,7 +1,9 @@
 FROM gradle:jdk17 AS gradle
 WORKDIR /app
 COPY . .
-RUN gradle bootJar
+# fix https://stackoverflow.com/questions/61301818/java-failed-to-exec-spawn-helper-error-since-moving-to-java-14-on-linux
+ENV JAVA_TOOL_OPTIONS="-Djdk.lang.Process.launchMechanism=vfork"
+RUN gradle bootJar --stacktrace
 
 FROM openjdk:17 as runtime
 WORKDIR /app
